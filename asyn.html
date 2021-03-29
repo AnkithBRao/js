@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <script>
+            const posts=[{title:'title1',body:'this is title1'},{title:'title2',body:'this is title2'}];
+            function getPosts(){
+                let output='';
+                setTimeout(()=>{
+                    posts.forEach((post,index)=>{
+                        output+=`<li>${post.title}</li>`;
+                    });
+                    document.body.innerHTML+=output;
+                },5000);
+            }
+            getPosts();
+            function createPost(post){
+                setTimeout(()=>{
+                    posts.push(post);
+                    //document.body.innerHTML+=`<li>${post.title}</li>`;
+                },4000);
+            }
+            createPost({title:'title3',body:'this is title3'});
+            alert('hi');
+        </script>
+    </body>
+</html>
